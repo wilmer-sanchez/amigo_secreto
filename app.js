@@ -31,3 +31,7 @@ function mostarNombre(elemento,texto){
   console.log(elementoHTML)
 }
 
+function sortearAmigo(){
+  let numeroGenerado = Math.floor(Math.random() * listadoAmigos.length) + 1;
+  console.log("este es el numero que generamos  " + numeroGenerado)
+}
