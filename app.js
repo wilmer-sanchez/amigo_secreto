@@ -1,48 +1,39 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
+// Esta app permite sortear e indicar de manera aleatoria un Nombre, desde un listado de nombres agregados previamente por el usuario
 
 /*Variables*/
-console.log('inicaimos  ')
 let listadoAmigos =[];
-console.log('listado  '+ listadoAmigos)
+
 /* Funcion Agregar nombre a listado */
-
 function agregarAmigo(){
-  let addNumber = document.getElementById('amigo').value;
-  if (addNumber=== ""){
-    alert ('vacioooooo nooo');
+  let addNombre = document.getElementById('amigo').value;
+  if (addNombre === ""){
+    alert ('El campo "Escribe un nombre" no puede estar vacio, por favor escribe el nombre de uno de tus amigos y da Click en Añadir');
   }else{
-    listadoAmigos.push(addNumber);
-    console.log("boton");
-    console.log(listadoAmigos);
+    listadoAmigos.push(addNombre);
     limpiarCaja();
-    mostarNombre('listaAmigos', addNumber)
+    mostarNombre('listaAmigos', addNombre)
   }
-
 }
 
-console.log('numeors  '+ listadoAmigos)
+/*Funcion para limpiar caja de texto */
 function limpiarCaja() {
   document.getElementById('amigo').value='';
-  console.log ('caja limpoiada')
-  console.log ('uuuuuuuu'+listadoAmigos);
-  
 }
 
+/*Funcion para mostrar el texto en pantalla */
 function mostarNombre(elemento,texto){
   let elementoHTML = document.getElementById(elemento);
   let nuevoelemento = document.createElement("li");
   nuevoelemento.appendChild(document.createTextNode(texto));
   elementoHTML.appendChild(nuevoelemento);
-  console.log(elementoHTML)
 }
 
+/* Funcion para sortear el amigo secreto entre todos los nombres agregados */
 function sortearAmigo(){
   let numeroGenerado = Math.floor(Math.random() * listadoAmigos.length);
-  console.log("este es el numero que generamos  " + numeroGenerado)
   let nombreAmigo = (listadoAmigos[numeroGenerado])
   let textoamigo = ('Tu amigo secreto es: ' + nombreAmigo)
   mostarNombre('resultado', textoamigo)
   let elementoEliminar = document.getElementById('listaAmigos');
-  console.log(elementoEliminar);
   elementoEliminar.remove();
 }
