@@ -34,5 +34,10 @@ function mostarNombre(elemento,texto){
 function sortearAmigo(){
   let numeroGenerado = Math.floor(Math.random() * listadoAmigos.length);
   console.log("este es el numero que generamos  " + numeroGenerado)
-  mostarNombre('resultado', listadoAmigos[numeroGenerado])
+  let nombreAmigo = (listadoAmigos[numeroGenerado])
+  let textoamigo = ('Tu amigo secreto es: ' + nombreAmigo)
+  mostarNombre('resultado', textoamigo)
+  let elementoEliminar = document.getElementById('listaAmigos');
+  console.log(elementoEliminar);
+  elementoEliminar.remove();
 }
