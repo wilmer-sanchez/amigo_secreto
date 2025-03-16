@@ -8,11 +8,16 @@ console.log('listado  '+ listadoAmigos)
 
 function agregarAmigo(){
   let addNumber = document.getElementById('amigo').value;
-  listadoAmigos.push(addNumber);
-  console.log("boton");
-  console.log(listadoAmigos);
-  limpiarCaja();
-  mostarNombre('listaAmigos',addNumber)
+  if (addNumber=== ""){
+    alert ('vacioooooo nooo');
+  }else{
+    listadoAmigos.push(addNumber);
+    console.log("boton");
+    console.log(listadoAmigos);
+    limpiarCaja();
+    mostarNombre('listaAmigos', addNumber)
+  }
+
 }
 
 console.log('numeors  '+ listadoAmigos)
